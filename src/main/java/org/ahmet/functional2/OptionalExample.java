@@ -30,6 +30,28 @@ public class OptionalExample {
         Optional<String> flatMappedValue = optionalValue.flatMap(value -> Optional.of(value.toUpperCase()));
         flatMappedValue.ifPresent(value -> System.out.println("FlatMapped value: " + value));
 
+        // 7. orElseGet
+        String valueUsingOrElseGet = emptyOptional.orElseGet(() -> "Generated Default Value");
+        System.out.println("Value using orElseGet: " + valueUsingOrElseGet);
+
+        // 8. orElseThrow
+        try {
+            String valueUsingOrElseThrow = emptyOptional.orElseThrow(() -> new IllegalArgumentException("Value is not present!"));
+            System.out.println("Value using orElseThrow: " + valueUsingOrElseThrow);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+        // 9. filter
+        Optional<String> filteredValue = optionalValue.filter(value -> value.startsWith("Hello"));
+        filteredValue.ifPresent(value -> System.out.println("Filtered value: " + value));
+
+        // 10. isEmpty (Java 11+)
+        if (emptyOptional.isEmpty()) {
+            System.out.println("The optional is empty.");
+        } else {
+            System.out.println("The optional is not empty.");
+        }
 
     }
 }
