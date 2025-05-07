@@ -1,6 +1,10 @@
 package org.ahmet.functional2;
 
 import java.util.Optional;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class OptionalExample {
     public static void main(String[] args) {
@@ -52,6 +56,26 @@ public class OptionalExample {
         } else {
             System.out.println("The optional is not empty.");
         }
+
+        // 1. Using Function with Optional.map
+        Optional<String> optionalValue2 = Optional.of("Hello, Functional Interfaces!");
+        Function<String, Integer> lengthFunction = String::length;
+        Optional<Integer> lengthOptional2 = optionalValue2.map(lengthFunction);
+        lengthOptional2.ifPresent(length -> System.out.println("Length of the string: " + length));
+
+        // 2. Using Consumer with Optional.ifPresent
+        Consumer<String> printConsumer = System.out::println;
+        optionalValue2.ifPresent(printConsumer);
+
+        // 3. Using Supplier with Optional.orElseGet
+        Supplier<String> defaultSupplier = () -> "Default Value from Supplier";
+        String value = Optional.<String>empty().orElseGet(defaultSupplier);
+        System.out.println("Value using Supplier: " + value);
+
+        // 4. Using Predicate with Optional.filter
+        Predicate<String> startsWithPredicate = str -> str.startsWith("Hello");
+        Optional<String> filteredValue2 = optionalValue2.filter(startsWithPredicate);
+        filteredValue2.ifPresent(val -> System.out.println("Filtered value: " + val));
 
     }
 }
