@@ -101,7 +101,7 @@ public class EmployeeStreamExamples {
                 .sum();
         System.out.println(totalSalary);
 
-        // Matching Operations
+        // Matching operations
         System.out.println("\n**Matching Operations**");
         boolean anyIT = employees.stream()
                 .anyMatch(e -> e.getDepartment().equals("IT"));
@@ -115,6 +115,23 @@ public class EmployeeStreamExamples {
                 .noneMatch(e -> e.getDepartment().equals("Finance"));
         System.out.println("No employee in Finance department: " + noneFinance);
 
+        // Collecting operations
+        System.out.println("\n**Collecting Operations**");
+        List<String> itEmployeeNames = employees.stream()
+                .filter(e -> e.getDepartment().equals("IT"))
+                .map(Employee::getName)
+                .toList();
+        System.out.println("IT employee names: " + itEmployeeNames);
+
+        Set<String> uniqueDepartments = employees.stream()
+                .map(Employee::getDepartment)
+                .collect(Collectors.toSet());
+        System.out.println("Unique departments: " + uniqueDepartments);
+
+        String allNames = employees.stream()
+                .map(Employee::getName)
+                .collect(Collectors.joining(", "));
+        System.out.println("All employee names: " + allNames);
 
     }
 }
