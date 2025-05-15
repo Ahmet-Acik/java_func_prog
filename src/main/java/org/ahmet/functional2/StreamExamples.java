@@ -17,7 +17,7 @@ public class StreamExamples {
 
         Stream<Integer> stream = collection.stream();
         System.out.println("Stream cannot be modified after creation.");
-        System.out.println("Stream elements: " + stream.collect(Collectors.toList()));
+        System.out.println("Stream elements: " + stream.toList());
 
         // 2. Limit and Filter Operators
         System.out.println("\n**Limit and Filter Operators**");
@@ -25,14 +25,14 @@ public class StreamExamples {
                                                  .filter(x -> x % 2 == 0) // Filter even numbers
                                                  .limit(5) // Limit to first 5 elements
                                                  .boxed()
-                                                 .collect(Collectors.toList());
+                                                 .toList();
         System.out.println("Limited and filtered numbers: " + limitedFiltered);
 
         // 3. The Map Operator
         System.out.println("\n**The Map Operator**");
         List<String> mapped = List.of("apple", "banana", "cherry").stream()
                                   .map(String::toUpperCase) // Convert to uppercase
-                                  .collect(Collectors.toList());
+                                  .toList();
         System.out.println("Mapped strings: " + mapped);
 
         // 4. The Peek Operator and Debugging
@@ -41,13 +41,13 @@ public class StreamExamples {
                                         .peek(x -> System.out.println("Processing: " + x)) // Debug intermediate values
                                         .map(x -> x * x) // Square each number
                                         .boxed()
-                                        .collect(Collectors.toList());
+                                        .toList();
         System.out.println("Peeked numbers: " + peeked);
 
         // 5. The Effect of Terminal Operations
         System.out.println("\n**The Effect of Terminal Operations**");
         Stream<Integer> infiniteStream = Stream.iterate(1, n -> n + 1);
-        List<Integer> firstTen = infiniteStream.limit(10).collect(Collectors.toList()); // Terminal operation triggers processing
+        List<Integer> firstTen = infiniteStream.limit(10).toList(); // Terminal operation triggers processing
         System.out.println("First 10 numbers from infinite stream: " + firstTen);
 
         // 6. Distinct and Sorted Operators
@@ -55,7 +55,7 @@ public class StreamExamples {
         List<Integer> distinctSorted = Stream.of(5, 3, 1, 2, 3, 4, 5)
                                              .distinct() // Remove duplicates
                                              .sorted() // Sort the elements
-                                             .collect(Collectors.toList());
+                                             .toList();
         System.out.println("Distinct and sorted numbers: " + distinctSorted);
 
         // 7. Concatenating Streams
@@ -63,7 +63,7 @@ public class StreamExamples {
         Stream<String> stream1 = Stream.of("A", "B", "C");
         Stream<String> stream2 = Stream.of("D", "E", "F");
         List<String> concatenated = Stream.concat(stream1, stream2) // Concatenate two streams
-                                          .collect(Collectors.toList());
+                                          .toList();
         System.out.println("Concatenated streams: " + concatenated);
 
         // 8. Working with Object Streams
@@ -91,12 +91,12 @@ public class StreamExamples {
 
         List<String> names = people.stream()
                                    .map(person -> person.name) // Extract names
-                                   .collect(Collectors.toList());
+                                   .toList();
         System.out.println("Names of people: " + names);
 
         List<Person> sortedByAge = people.stream()
                                          .sorted((p1, p2) -> Integer.compare(p1.age, p2.age)) // Sort by age
-                                         .collect(Collectors.toList());
+                                         .toList();
         System.out.println("People sorted by age: " + sortedByAge);
     }
 }
