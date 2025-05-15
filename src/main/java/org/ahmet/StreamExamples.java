@@ -10,7 +10,7 @@ public class StreamExamples {
         List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "David", "Eve");
         List<String> filteredNames = names.stream()
                                           .filter(name -> name.startsWith("A"))
-                                          .collect(Collectors.toList());
+                                          .toList();
         System.out.println("Filtered names: " + filteredNames);
 
         // Example 2: Mapping and sorting
@@ -18,7 +18,7 @@ public class StreamExamples {
         List<Integer> squaredSortedNumbers = numbers.stream()
                                                     .map(n -> n * n)
                                                     .sorted()
-                                                    .collect(Collectors.toList());
+                                                    .toList();
         System.out.println("Squared and sorted numbers: " + squaredSortedNumbers);
 
         // Example 3: Reducing a stream
