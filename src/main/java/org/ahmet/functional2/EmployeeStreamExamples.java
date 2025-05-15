@@ -101,6 +101,20 @@ public class EmployeeStreamExamples {
                 .sum();
         System.out.println(totalSalary);
 
+        // Matching Operations
+        System.out.println("\n**Matching Operations**");
+        boolean anyIT = employees.stream()
+                .anyMatch(e -> e.getDepartment().equals("IT"));
+        System.out.println("Any employee in IT department: " + anyIT);
+
+        boolean allHR = employees.stream()
+                .allMatch(e -> e.getDepartment().equals("HR"));
+        System.out.println("All employees in HR department: " + allHR);
+
+        boolean noneFinance = employees.stream()
+                .noneMatch(e -> e.getDepartment().equals("Finance"));
+        System.out.println("No employee in Finance department: " + noneFinance);
+
 
     }
 }
