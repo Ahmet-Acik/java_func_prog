@@ -10,13 +10,13 @@ public class StreamApiExamples {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         List<Integer> evenNumbers = numbers.stream()
                                            .filter(n -> n % 2 == 0)
-                                           .collect(Collectors.toList());
+                                           .toList();
         System.out.println("Even numbers: " + evenNumbers);
 
         // Example 2: Mapping numbers to their squares
         List<Integer> squares = numbers.stream()
                                        .map(n -> n * n)
-                                       .collect(Collectors.toList());
+                                       .toList();
         System.out.println("Squares: " + squares);
 
         // Example 3: Reducing to find the sum of all numbers
