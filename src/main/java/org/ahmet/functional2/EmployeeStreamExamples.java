@@ -82,6 +82,10 @@ public class EmployeeStreamExamples {
                  .filter(e -> e.getSalary() > 60000)
                  .forEach(System.out::println);
 
-
+        // 10. Find the employee with the minimum age
+        System.out.println("\nEmployee with minimum age:");
+        employees.stream()
+                .min(Comparator.comparingInt(Employee::getAge))
+                .ifPresent(System.out::println);
     }
 }
