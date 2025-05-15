@@ -75,5 +75,13 @@ public class EmployeeStreamExamples {
         Map<String, Long> countByDepartment = employees.stream()
                                                        .collect(Collectors.groupingBy(Employee::getDepartment, Collectors.counting()));
         System.out.println(countByDepartment);
+
+        // 9. Find employees with salary greater than a certain amount
+        System.out.println("\nEmployees with salary greater than 60000:");
+        employees.stream()
+                 .filter(e -> e.getSalary() > 60000)
+                 .forEach(System.out::println);
+
+
     }
 }
