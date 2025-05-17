@@ -33,6 +33,13 @@ public class StreamCreationExamples {
         Stream<Double> randomNumbers = Stream.generate(Math::random);
         randomNumbers.limit(5).forEach(System.out::println);
 
+        // 6. Creating a stream from a primitive range (IntStream)
+        System.out.println("\nStream from IntStream.range:");
+        IntStream.range(1, 5).forEach(System.out::println);
+
+        // 7. Creating a stream from a primitive range (IntStream.rangeClosed)
+        System.out.println("\nStream from IntStream.rangeClosed:");
+        IntStream.rangeClosed(1, 5).forEach(System.out::println);
 
     }
 }
