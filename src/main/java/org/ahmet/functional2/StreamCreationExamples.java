@@ -50,5 +50,13 @@ public class StreamCreationExamples {
         System.out.println("\nEmpty Stream:");
         emptyStream.forEach(System.out::println); // No output
 
+        // 10. Creating a stream from a string (split by whitespace)
+        String str = "Hello World from Java Streams";
+        Stream<String> streamFromString = Arrays.stream(str.split(" "));
+        System.out.println("\nStream from String:");
+        streamFromString.forEach(System.out::println);
+
+
+
     }
 }
