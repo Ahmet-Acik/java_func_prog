@@ -28,6 +28,11 @@ public class StreamCreationExamples {
         Stream<Integer> infiniteStream = Stream.iterate(0, n -> n + 2);
         infiniteStream.limit(5).forEach(System.out::println);
 
+        // 5. Creating an infinite stream using Stream.generate
+        System.out.println("\nInfinite Stream using Stream.generate (first 5 elements):");
+        Stream<Double> randomNumbers = Stream.generate(Math::random);
+        randomNumbers.limit(5).forEach(System.out::println);
+
 
     }
 }
