@@ -12,6 +12,12 @@ public class StreamCreationExamples {
         System.out.println("Stream from List:");
         streamFromList.forEach(System.out::println);
 
+        // 2. Creating a stream from an array
+        String[] array = {"Ahmet", "John", "Zara"};
+        Stream<String> streamFromArray = Arrays.stream(array);
+        System.out.println("\nStream from Array:");
+        streamFromArray.forEach(System.out::println);
+
 
     }
 }
