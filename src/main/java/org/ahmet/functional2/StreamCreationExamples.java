@@ -56,6 +56,24 @@ public class StreamCreationExamples {
         System.out.println("\nStream from String:");
         streamFromString.forEach(System.out::println);
 
+        // 11. Creating a stream from a map (keys)
+        Map<String, Integer> map = new HashMap<>();
+        map.put("Alice", 25);
+        map.put("Bob", 30);
+        map.put("Charlie", 35);
+        Stream<String> streamFromMapKeys = map.keySet().stream();
+        System.out.println("\nStream from Map keys:");
+        streamFromMapKeys.forEach(System.out::println);
+
+        // 12. Creating a stream from a map (values)
+        Stream<Integer> streamFromMapValues = map.values().stream();
+        System.out.println("\nStream from Map values:");
+        streamFromMapValues.forEach(System.out::println);
+
+        // 13. Creating a stream from a map (entries)
+        Stream<Map.Entry<String, Integer>> streamFromMapEntries = map.entrySet().stream();
+        System.out.println("\nStream from Map entries:");
+        streamFromMapEntries.forEach(entry -> System.out.println(entry.getKey() + ": " + entry.getValue()));
 
 
     }
