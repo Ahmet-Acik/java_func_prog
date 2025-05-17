@@ -41,5 +41,14 @@ public class StreamCreationExamples {
         System.out.println("\nStream from IntStream.rangeClosed:");
         IntStream.rangeClosed(1, 5).forEach(System.out::println);
 
+
+        // 8. Creating a stream from a file (requires try-with-resources)
+        System.out.println("\nStream from a file (example skipped, requires file handling).");
+
+        // 9. Creating an empty stream
+        Stream<String> emptyStream = Stream.empty();
+        System.out.println("\nEmpty Stream:");
+        emptyStream.forEach(System.out::println); // No output
+
     }
 }
