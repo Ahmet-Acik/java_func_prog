@@ -18,6 +18,13 @@ public class StreamCreationExamples {
         System.out.println("\nStream from Array:");
         streamFromArray.forEach(System.out::println);
 
+        // 3. Creating a stream using Stream.of
+        Stream<String> streamOf = Stream.of("One", "Two", "Three");
+        System.out.println("\nStream using Stream.of:");
+        streamOf.forEach(System.out::println);
+
+
+
 
     }
 }
