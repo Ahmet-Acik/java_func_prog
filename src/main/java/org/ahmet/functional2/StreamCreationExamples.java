@@ -23,7 +23,10 @@ public class StreamCreationExamples {
         System.out.println("\nStream using Stream.of:");
         streamOf.forEach(System.out::println);
 
-
+        // 4. Creating an infinite stream using Stream.iterate
+        System.out.println("\nInfinite Stream using Stream.iterate (first 5 elements):");
+        Stream<Integer> infiniteStream = Stream.iterate(0, n -> n + 2);
+        infiniteStream.limit(5).forEach(System.out::println);
 
 
     }
