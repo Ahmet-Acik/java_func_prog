@@ -51,7 +51,11 @@ public class LambdaExamples {
         Arrays.sort(names, Comparator.comparingInt(String::length));
         System.out.println("Sorted names by length: " + Arrays.toString(names));
 
-
+        // Example 10: Using a lambda to create a list of name lengths
+        int[] nameLengths = Arrays.stream(names)
+                                  .mapToInt(String::length)
+                                  .toArray();
+        System.out.println("Lengths of names: " + Arrays.toString(nameLengths));
 
     }
 }
