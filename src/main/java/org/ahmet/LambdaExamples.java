@@ -28,5 +28,13 @@ public class LambdaExamples {
                                        .filter(name -> name.startsWith("A"))
                                        .toArray(String[]::new);
         System.out.println("Names starting with 'A': " + Arrays.toString(filteredNames));
+
+        // Example 6: Using a lambda to find the first name that contains 'e'
+        String firstWithE = Arrays.stream(names)
+                                  .filter(name -> name.contains("e"))
+                                  .findFirst()
+                                  .orElse("No name found containing 'e'");
+        System.out.println("First name containing 'e': " + firstWithE);
+
     }
 }
