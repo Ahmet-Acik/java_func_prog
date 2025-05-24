@@ -42,5 +42,16 @@ public class LambdaExamples {
               .map(String::toUpperCase)
               .forEach(System.out::println);
 
+        // Example 8: Using a lambda to create a custom message for each name
+        Arrays.stream(names)
+              .map(name -> "Hello, " + name + "!")
+              .forEach(System.out::println);
+
+        // Example 9: Using a lambda to sort names by length
+        Arrays.sort(names, Comparator.comparingInt(String::length));
+        System.out.println("Sorted names by length: " + Arrays.toString(names));
+
+
+
     }
 }
