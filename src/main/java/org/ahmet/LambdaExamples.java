@@ -36,5 +36,11 @@ public class LambdaExamples {
                                   .orElse("No name found containing 'e'");
         System.out.println("First name containing 'e': " + firstWithE);
 
+        // Example 7: Using a lambda to print names in uppercase
+        System.out.println("Names in uppercase:");
+        Arrays.stream(names)
+              .map(String::toUpperCase)
+              .forEach(System.out::println);
+
     }
 }
