@@ -22,5 +22,11 @@ public class LambdaExamples {
         Arrays.stream(names)
               .map(name -> "Name: " + name + ", Length: " + name.length())
               .forEach(System.out::println);
+
+        // Example 5: Using a lambda to filter names starting with 'A'
+        String[] filteredNames = Arrays.stream(names)
+                                       .filter(name -> name.startsWith("A"))
+                                       .toArray(String[]::new);
+        System.out.println("Names starting with 'A': " + Arrays.toString(filteredNames));
     }
 }
