@@ -57,5 +57,11 @@ public class LambdaExamples {
                                   .toArray();
         System.out.println("Lengths of names: " + Arrays.toString(nameLengths));
 
+        // Example 11: Using a lambda to find the longest name
+        String longestName = Arrays.stream(names)
+                .max(Comparator.comparingInt(String::length))
+                .orElse("No names available");
+        System.out.println("Longest name: " + longestName);
+
     }
 }
