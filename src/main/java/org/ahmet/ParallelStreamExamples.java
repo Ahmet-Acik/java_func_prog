@@ -51,6 +51,14 @@ public class ParallelStreamExamples {
                                              .collect(Collectors.toList());
         System.out.println("Even numbers (parallel): " + evenNumbers);
 
+        // Example 6: Parallel stream with map and reduce
+        int sumOfSquares = IntStream.rangeClosed(1, 100)
+                                    .parallel()
+                                    .map(n -> n * n)
+                                    .sum();
+        System.out.println("Sum of squares (parallel): " + sumOfSquares);
+
+
 
     }
 }
