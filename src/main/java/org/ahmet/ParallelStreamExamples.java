@@ -43,5 +43,14 @@ public class ParallelStreamExamples {
                                   .collect(Collectors.joining(", "));
         System.out.println("Joined names (parallel): " + joinedNames);
 
+        // Example 5: Parallel stream with filtering
+        List<Integer> evenNumbers = IntStream.rangeClosed(1, 20)
+                                             .parallel()
+                                             .filter(n -> n % 2 == 0)
+                                             .boxed()
+                                             .collect(Collectors.toList());
+        System.out.println("Even numbers (parallel): " + evenNumbers);
+
+
     }
 }
