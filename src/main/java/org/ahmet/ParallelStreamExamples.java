@@ -83,6 +83,14 @@ public class ParallelStreamExamples {
         System.out.println("Distinct numbers (parallel): " + distinctNumbers);
 
 
+        // Example 10: Parallel stream with limit
+        List<Integer> limitedNumbers = IntStream.rangeClosed(1, 100)
+                .parallel()
+                .limit(10)
+                .boxed()
+                .collect(Collectors.toList());
+        System.out.println("Limited numbers (parallel): " + limitedNumbers);
+
 
 
     }
