@@ -36,5 +36,10 @@ public class OptionalExamples {
             System.out.println(e.getMessage());
         }
 
+        // Example 8: Using filter to conditionally keep values
+        Optional<String> filteredOptional = nonEmptyOptional.filter(value -> value.length() > 10);
+        filteredOptional.ifPresent(value -> System.out.println("Filtered value: " + value));
+
+
     }
 }
