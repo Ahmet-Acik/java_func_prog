@@ -74,5 +74,16 @@ public class ParallelStreamExamples {
         System.out.println("Sorted numbers (parallel): " + sortedNumbers);
 
 
+        // Example 9: Parallel stream with distinct
+        List<Integer> distinctNumbers = IntStream.of(1, 2, 2, 3, 4, 4, 5)
+                                                  .parallel()
+                                                  .distinct()
+                                                  .boxed()
+                                                  .collect(Collectors.toList());
+        System.out.println("Distinct numbers (parallel): " + distinctNumbers);
+
+
+
+
     }
 }
