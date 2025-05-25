@@ -100,6 +100,15 @@ public class ParallelStreamExamples {
         System.out.println("Skipped first 5 numbers (parallel): " + skippedNumbers);
 
 
-
+        // Example 12: Parallel stream with flatMap
+        List<List<Integer>> nestedLists = List.of(
+                List.of(1, 2, 3),
+                List.of(4, 5, 6),
+                List.of(7, 8, 9)
+        );
+        List<Integer> flattenedList = nestedLists.parallelStream()
+                .flatMap(List::stream)
+                .collect(Collectors.toList());
+        System.out.println("Flattened list (parallel): " + flattenedList);
     }
 }
