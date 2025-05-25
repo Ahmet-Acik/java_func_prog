@@ -59,6 +59,12 @@ public class ParallelStreamExamples {
         System.out.println("Sum of squares (parallel): " + sumOfSquares);
 
 
+        // Example 7: Parallel stream with forEach
+        System.out.println("Numbers from 1 to 10 (parallel forEach):");
+        IntStream.rangeClosed(1, 10)
+                 .parallel()
+                 .forEach(n -> System.out.println("Number: " + n));
+
 
     }
 }
