@@ -41,5 +41,10 @@ public class OptionalExamples {
         filteredOptional.ifPresent(value -> System.out.println("Filtered value: " + value));
 
 
+        // Example 9: Using orElseGet to provide a value from a supplier
+        String valueFromSupplier = emptyOptional.orElseGet(() -> "Value from Supplier");
+        System.out.println("Value from supplier: " + valueFromSupplier);
+
+
     }
 }
