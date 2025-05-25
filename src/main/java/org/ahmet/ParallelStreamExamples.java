@@ -91,6 +91,14 @@ public class ParallelStreamExamples {
                 .collect(Collectors.toList());
         System.out.println("Limited numbers (parallel): " + limitedNumbers);
 
+        // Example 11: Parallel stream with skip
+        List<Integer> skippedNumbers = IntStream.rangeClosed(1, 20)
+                .parallel()
+                .skip(5)
+                .boxed()
+                .collect(Collectors.toList());
+        System.out.println("Skipped first 5 numbers (parallel): " + skippedNumbers);
+
 
 
     }
