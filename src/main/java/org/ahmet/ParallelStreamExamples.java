@@ -65,6 +65,14 @@ public class ParallelStreamExamples {
                  .parallel()
                  .forEach(n -> System.out.println("Number: " + n));
 
+        // Example 8: Parallel stream with sorted
+        List<Integer> sortedNumbers = IntStream.rangeClosed(1, 10)
+                                               .parallel()
+                                               .boxed()
+                                               .sorted()
+                                               .collect(Collectors.toList());
+        System.out.println("Sorted numbers (parallel): " + sortedNumbers);
+
 
     }
 }
