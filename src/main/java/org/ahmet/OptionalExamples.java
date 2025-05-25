@@ -27,5 +27,14 @@ public class OptionalExamples {
         // Example 6: Chaining with flatMap
         Optional<String> upperCaseOptional = nonEmptyOptional.flatMap(value -> Optional.of(value.toUpperCase()));
         upperCaseOptional.ifPresent(value -> System.out.println("Uppercase: " + value));
+
+        // Example 7: Handling absence with orElseThrow
+        try {
+            String value = nullableOptional.orElseThrow(() -> new IllegalArgumentException("Value is absent!"));
+            System.out.println("Value: " + value);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
     }
 }
