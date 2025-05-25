@@ -36,5 +36,12 @@ public class ParallelStreamExamples {
                  .sum();
         long endParallel = System.currentTimeMillis();
         System.out.println("Parallel stream time: " + (endParallel - startParallel) + " ms");
+
+        // Example 4: Using parallel stream with custom collector
+        List<String> names = List.of("Ahmet", "John", "Zara", "Emily");
+        String joinedNames = names.parallelStream()
+                                  .collect(Collectors.joining(", "));
+        System.out.println("Joined names (parallel): " + joinedNames);
+
     }
 }
