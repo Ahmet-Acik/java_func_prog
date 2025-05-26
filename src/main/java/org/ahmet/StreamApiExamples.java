@@ -67,5 +67,12 @@ public class StreamApiExamples {
                       .orElseThrow(() -> new RuntimeException("No minimum found"));
     }
 
+    // Example 10: Checking if all numbers are positive
+    public static boolean allNumbersPositive() {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, -6, 7, 8, 9, 10);
+        return numbers.stream()
+                      .allMatch(n -> n > 0);
+    }
+
 
 }
