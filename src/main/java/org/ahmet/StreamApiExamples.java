@@ -37,4 +37,11 @@ public class StreamApiExamples {
                     .collect(Collectors.toList());
     }
 
+    // Example 6: Joining names into a single string
+    public static String joinNames() {
+        List<String> names = Arrays.asList("Ahmet", "John", "Zara", "Emily");
+        return names.stream()
+                    .collect(Collectors.joining(", "));
+    }
+
 }
