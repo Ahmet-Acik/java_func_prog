@@ -82,5 +82,11 @@ public class StreamApiExamples {
                       .anyMatch(n -> n % 2 == 0);
     }
 
+    // Example 12: Checking if no number is negative
+    public static boolean noNumberNegative() {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        return numbers.stream()
+                .noneMatch(n -> n < 0);
+    }
 
 }
