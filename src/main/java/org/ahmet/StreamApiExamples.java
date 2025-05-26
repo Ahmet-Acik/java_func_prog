@@ -44,4 +44,12 @@ public class StreamApiExamples {
                     .collect(Collectors.joining(", "));
     }
 
+    // Example 7: Counting the number of names
+    public static long countNames() {
+        List<String> names = Arrays.asList("Ahmet", "John", "Zara", "Emily");
+        return names.stream()
+                    .count();
+    }
+
+
 }
