@@ -59,5 +59,13 @@ public class StreamApiExamples {
                       .orElseThrow(() -> new RuntimeException("No maximum found"));
     }
 
+    // Example 9: Finding the minimum number
+    public static int findMinNumber() {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        return numbers.stream()
+                      .min(Integer::compareTo)
+                      .orElseThrow(() -> new RuntimeException("No minimum found"));
+    }
+
 
 }
