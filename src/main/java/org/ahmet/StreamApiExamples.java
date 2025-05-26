@@ -29,4 +29,12 @@ public class StreamApiExamples {
         numbers.stream()
                .forEach(System.out::println);
     }
+
+    // Example 5: Collecting names into a list
+    public static List<String> collectNames() {
+        List<String> names = Arrays.asList("Ahmet", "John", "Zara", "Emily");
+        return names.stream()
+                    .collect(Collectors.toList());
+    }
+
 }

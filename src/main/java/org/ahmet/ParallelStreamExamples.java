@@ -111,4 +111,6 @@ public class ParallelStreamExamples {
                 .collect(Collectors.toList());
         System.out.println("Flattened list (parallel): " + flattenedList);
     }
+
+
 }
