@@ -51,5 +51,13 @@ public class StreamApiExamples {
                     .count();
     }
 
+    // Example 8: Finding the maximum number
+    public static int findMaxNumber() {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        return numbers.stream()
+                      .max(Integer::compareTo)
+                      .orElseThrow(() -> new RuntimeException("No maximum found"));
+    }
+
 
 }
