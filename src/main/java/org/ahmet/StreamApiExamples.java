@@ -75,4 +75,12 @@ public class StreamApiExamples {
     }
 
 
+    // Example 11: Checking if any number is even
+    public static boolean anyNumberEven() {
+        List<Integer> numbers = Arrays.asList(1, 3, 5, 7, 9);
+        return numbers.stream()
+                      .anyMatch(n -> n % 2 == 0);
+    }
+
+
 }
