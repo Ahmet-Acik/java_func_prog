@@ -1,4 +1,4 @@
-package org.ahmet;
+package org.ahmet.functional1;
 
 // Custom functional interface
 @FunctionalInterface
