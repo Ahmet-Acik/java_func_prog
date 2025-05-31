@@ -1,4 +1,4 @@
-package org.ahmet;
+package org.ahmet.functional1;
 
 public class Main {
     public static void main(String[] args) {
