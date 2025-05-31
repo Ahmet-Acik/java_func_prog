@@ -1,4 +1,4 @@
-package org.ahmet;
+package org.ahmet.functional1;
 
 import java.util.List;
 import java.util.stream.Collectors;
