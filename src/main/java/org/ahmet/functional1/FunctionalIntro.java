@@ -1,5 +1,5 @@
 // FunctionalIntro.java
-package org.ahmet;
+package org.ahmet.functional1;
 
 import java.util.function.Function;
 
